@@ -1,24 +1,37 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>文档标题</title>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    <script src="../jslibs/jquery.js">
     </script>
-    <script src="../jslibs/util_common.js"></script>
+    <script src="../jslibs/svg.min.js">
+    </script>
 </head>
 
-<body bgcolor="white">
-	<div>
-        <div style="text-align: center;">
-            <img id="dailyImg" />
-            <script>
-                var dailyImg = doucment.getElementById("dailyImg");
-                dailyImg.src = splipJointImgUrl("0f316e01-a078-42bd-b6d9-0ea1f21d547b");
-            </script>
-        </div>
-	</div>
+<body bgcolor="white"
+      style="
+      background: url('../imgs/daily.jpg') no-repeat center 0px;
+      background-size: cover;
+      background-position: center 0;">
+
+    <div  id="drawing" style="right:0; position:absolute;text-align:center;">
+    </div>
+
+    <div  id="drawing1" style="right:0; position:absolute;">
+
+        <p style="position:absolute;font-size:33px;top:23px;left:43px">跳过</p>
+
+    </div>
+
+    <script>
+        function drawCircle(name, color){
+            var draw = SVG(name).size(150, 150)
+            draw.circle(100).attr({ fill: 'transparent'}).attr({stroke: color}).attr({'stroke-width': 4}).attr({cx: 75}).attr({cy: 75})
+        }
+        drawCircle('drawing', 'white');
+        drawCircle('drawing1', 'red');
+    </script>
 </body>
 
 </html>
