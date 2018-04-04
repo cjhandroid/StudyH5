@@ -7,6 +7,7 @@
     </script>
     <script src="../jslibs/svg.min.js">
     </script>
+    <link rel="stylesheet" type="text/css" href="../css/welcome_daily.css">
 </head>
 
 <body bgcolor="white"
@@ -15,13 +16,15 @@
       background-size: cover;
       background-position: center 0;">
 
-    <div  id="drawing" style="right:0; position:absolute;text-align:center;">
+    <div  id="drawing" style="right:0; position:absolute">
+        <p style="position:absolute;font-size:33px;top:23px;left:42px">跳过</p>
     </div>
 
     <div  id="drawing1" style="right:0; position:absolute;">
-
-        <p style="position:absolute;font-size:33px;top:23px;left:43px">跳过</p>
-
+        <svg width="240px" height="240px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="110" cy="110" r="90" stroke-width="20" stroke="#dcdcdc" fill="none"></circle>
+            <circle cx="110" cy="110" r="90" stroke-width="20" stroke="white" fill="none" class="circle-load-svg"></circle>
+        </svg>
     </div>
 
     <script>
@@ -30,7 +33,6 @@
             draw.circle(100).attr({ fill: 'transparent'}).attr({stroke: color}).attr({'stroke-width': 4}).attr({cx: 75}).attr({cy: 75})
         }
         drawCircle('drawing', 'white');
-        drawCircle('drawing1', 'red');
     </script>
 </body>
 
