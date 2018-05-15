@@ -1,3 +1,5 @@
- .circle-load { position: absolute; width: 200px; height: 200px; top: 50%; left: 50%; transform: translate(-50%, -50%); }
- .circle-load-svg { stroke-dasharray: 0 570; animation:rot 8s linear infinite; }
- @keyframes rot{ 100%{ stroke-dasharray: 570 570; } }
+.circle-load-svg { stroke-dasharray: 0 360; animation:rot 5s linear forwards; }
+@keyframes rot{ 100%{ stroke-dasharray: 360 360; } }
+@-webkit-keyframes rot{ 100%{ stroke-dasharray: 360 360; } }
+@-o-keyframes rot{ 100%{ stroke-dasharray: 360 360; } }
+@-moz-keyframes rot{ 100%{ stroke-dasharray: 360 360; } }

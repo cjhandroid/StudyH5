@@ -15,25 +15,38 @@
       background: url('../imgs/daily.jpg') no-repeat center 0px;
       background-size: cover;
       background-position: center 0;">
-
-    <div  id="drawing" style="right:0; position:absolute">
-        <p style="position:absolute;font-size:33px;top:23px;left:42px">跳过</p>
+<div style="right:0; position:absolute" id="drawingP">
+    <div id="drawing">
+        <p style="position:absolute;font-size:33px;top:20px;left:42px">跳过</p>
     </div>
 
-    <div  id="drawing1" style="right:0; position:absolute;">
-        <svg width="240px" height="240px" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="110" cy="110" r="90" stroke-width="20" stroke="#dcdcdc" fill="none"></circle>
-            <circle cx="110" cy="110" r="90" stroke-width="20" stroke="white" fill="none" class="circle-load-svg"></circle>
+    <div id="drawing1" style="right:0; top:0; position:absolute">
+        <svg width="150px" height="150px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="75" cy="75" r="50" stroke-width="4" stroke="red" fill="none"
+                    class="circle-load-svg"></circle>
         </svg>
     </div>
+</div>
+<script>
 
-    <script>
+        var t;
+
+        t = setTimeout("jumpJs.jump2MainAct();", 5000);
+
         function drawCircle(name, color){
-            var draw = SVG(name).size(150, 150)
-            draw.circle(100).attr({ fill: 'transparent'}).attr({stroke: color}).attr({'stroke-width': 4}).attr({cx: 75}).attr({cy: 75})
+            var draw = SVG(name).size(150, 150);
+            draw.circle(100).attr({ fill: 'transparent'}).attr({stroke: color}).attr({'stroke-width': 4}).attr({cx: 75}).attr({cy: 75});
         }
         drawCircle('drawing', 'white');
-    </script>
+
+        $("#drawingP").click(function(){
+            clearTimeout(t);
+            jumpJs.jump2MainAct();
+        });
+
+
+
+</script>
 </body>
 
 </html>

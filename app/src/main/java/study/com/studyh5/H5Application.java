@@ -1,12 +1,14 @@
 package study.com.studyh5;
 
 import android.app.Application;
-import android.webkit.WebView;
+
+import com.tencent.smtt.sdk.QbSdk;
 
 public class H5Application extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
+        QbSdk.initX5Environment(getApplicationContext(),  null);
     }
 }

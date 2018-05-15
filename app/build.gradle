@@ -1,6 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     compileSdkVersion 27
     defaultConfig {
         applicationId "study.com.studyh5"
@@ -8,6 +14,8 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+
+        ndk{abiFilters "armeabi"}
     }
     buildTypes {
         release {
@@ -18,7 +26,10 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.orhanobut:logger:2.2.0'
+    implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1183_43604.jar')
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    implementation "io.reactivex.rxjava2:rxjava:2.1.13"
 }
