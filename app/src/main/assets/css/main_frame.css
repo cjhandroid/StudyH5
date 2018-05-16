@@ -2,7 +2,58 @@
   margin:0;
   padding:0;
 }
+/* ----------------- header_search -----------------*/
+#header{
+    top:0;
+    position: fixed;
+}
 
+#sao{
+    float:left;
+    width:60px;
+    padding:25px 30px;
+}
+
+#homeSearch{
+    margin:20px 0px 20px 0px;
+    width:740px;
+    float:left;
+}
+
+#notice{
+    width:54px;
+    padding:25px 33px;
+    float:left;
+}
+
+/* ----------------- header_tabs -----------------*/
+
+#header_tabs{
+    margin: 50px auto 0 auto ;
+}
+
+#header_tabs div{
+    float:left;
+    text-align:center;
+    width:326px;
+}
+
+#header_tabs span{
+    margin: 0px auto;
+    font-size: 42px;
+    text-align:center;
+    color:#333333;
+}
+
+#header_tabs hr{
+    border:0px;
+    height: 5px;
+    width: 136px;
+    margin: 20px auto 0 auto;
+    background-color:#E94653;
+}
+
+/* ----------------- footer -----------------*/
 #footer{
   bottom: 0;
   position:fixed;
