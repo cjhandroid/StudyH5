@@ -47,12 +47,10 @@ public class BaseActivity extends AppCompatActivity {
         webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 
         webSettings.setDomStorageEnabled(true);
-
-
         webSettings.setSupportZoom(false);
         webSettings.setSupportMultipleWindows(true);
         webSettings.setAppCacheEnabled(true);
-
+        webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
         webSettings.setGeolocationEnabled(true);
         webSettings.setAppCacheMaxSize(Long.MAX_VALUE);
         webSettings.setPluginState(WebSettings.PluginState.ON_DEMAND);
