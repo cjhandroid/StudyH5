@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="../jslibs/jquery.js"></script>
-    <title>Sticky Footer</title>
+    <meta charset="utf-8">
+    <script src="../jslibs/jquery.js">
+    </script>
+    <title>main_frame</title>
     <link rel="stylesheet" type="text/css" href="../css/main_frame.css">
 </head>
-<body background="white">
+<body scroll="no">
 
 <div>
     <div id="header">
@@ -28,28 +30,99 @@
                 <hr>
             </div>
         </div>
+        <hr id="tabDivider">
     </div>
+
+    <div id="home_continer"></div>
 
     <div id="footer">
         <hr>
         <ul>
-            <li>
+            <li id="footer_home">
                 <div><img src="../imgs/menu_icon_home_selected.png"/></div>
             </li>
-            <li>
+            <li id="footer_search">
                 <div><img src="../imgs/menu_icon_search.png"/></div>
             </li>
-            <li>
+            <li id="footer_publish">
                 <div><img src="../imgs/menu_icon_publish.png"/></div>
             </li>
-            <li>
+            <li id="footer_course">
                 <div><img src="../imgs/menu_icon_course.png"/></div>
             </li>
-            <li>
+            <li id="footer_user">
                 <div><img src="../imgs/menu_icon_user.png"/></div>
             </li>
         </ul>
     </div>
 </div>
+
+<script>
+
+    function load_viewDiv(path) {
+        $('#home_continer').load(path);
+    }
+
+    load_viewDiv("./main_home_recommend.html");
+
+    $("#noticeTab").click(function(){
+        $("#noticeTab span").css("color", "#E94653");
+        $("#noticeTab hr").show();
+        $("#recommendTab span").css("color", "#333333");
+        $("#recommendTab hr").hide();
+        $("#latestTab span").css("color", "#333333");
+        $("#latestTab hr").hide();
+        load_viewDiv("./main_home_notice.html");
+    });
+
+    $("#recommendTab").click(function(){
+        $("#noticeTab span").css("color", "#333333");
+        $("#noticeTab hr").hide();
+        $("#recommendTab span").css("color", "#E94653");
+        $("#recommendTab hr").show();
+        $("#latestTab span").css("color", "#333333");
+        $("#latestTab hr").hide();
+        load_viewDiv("./main_home_recommend.html");
+    });
+
+    $("#latestTab").click(function(){
+        $("#noticeTab span").css("color", "#333333");
+        $("#noticeTab hr").hide();
+        $("#recommendTab span").css("color", "#333333");
+        $("#recommendTab hr").hide();
+        $("#latestTab span").css("color", "#E94653");
+        $("#latestTab hr").show();
+        load_viewDiv("./main_home_latest.html");
+    });
+
+    $("#footer_home").click(function(){
+        $("#footer_home img").attr("src","../imgs/menu_icon_home_selected.png");
+        $("#footer_search img").attr("src","../imgs/menu_icon_search.png");
+        $("#footer_course img").attr("src","../imgs/menu_icon_course.png");
+        $("#footer_user img").attr("src","../imgs/menu_icon_user.png");
+    });
+    $("#footer_search").click(function(){
+        $("#footer_home img").attr("src","../imgs/menu_icon_home.png");
+        $("#footer_search img").attr("src","../imgs/menu_icon_search_selected.png");
+        $("#footer_course img").attr("src","../imgs/menu_icon_course.png");
+        $("#footer_user img").attr("src","../imgs/menu_icon_user.png");
+    });
+    $("#footer_course").click(function(){
+        $("#footer_home img").attr("src","../imgs/menu_icon_home.png");
+        $("#footer_search img").attr("src","../imgs/menu_icon_search.png");
+        $("#footer_course img").attr("src","../imgs/menu_icon_course_selected.png");
+        $("#footer_user img").attr("src","../imgs/menu_icon_user.png");
+    });
+    $("#footer_user").click(function(){
+        $("#footer_home img").attr("src","../imgs/menu_icon_home.png");
+        $("#footer_search img").attr("src","../imgs/menu_icon_search.png");
+        $("#footer_course img").attr("src","../imgs/menu_icon_course.png");
+        $("#footer_user img").attr("src","../imgs/menu_icon_user_selected.png");
+    });
+
+
+
+</script>
+
 </body>
 </html>

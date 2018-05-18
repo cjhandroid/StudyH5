@@ -46,6 +46,7 @@ public class BaseActivity extends AppCompatActivity {
         //优先使用缓存:
         webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 
+        webSettings.setAllowUniversalAccessFromFileURLs(true);
         webSettings.setDomStorageEnabled(true);
         webSettings.setSupportZoom(false);
         webSettings.setSupportMultipleWindows(true);

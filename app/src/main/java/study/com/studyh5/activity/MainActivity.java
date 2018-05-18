@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 
 import study.com.studyh5.base.BaseActivity;
 
+
 public class MainActivity extends BaseActivity {
 
     @Override
