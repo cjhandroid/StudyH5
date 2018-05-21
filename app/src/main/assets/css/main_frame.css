@@ -5,6 +5,7 @@
 /* ----------------- header_search -----------------*/
 
 #header{
+    background-color:#ffffff;
     top:0;
     position:fixed;
 }
@@ -77,12 +78,12 @@
 #home_continer{
     width:100%;
     height:auto;
-
+    margin: 215px 0px 140px 0px;
 }
 
 /* ----------------- footer background-color:#ffffff; -----------------*/
 #footer{
-
+  background-color:#ffffff;
   clear:both;
   bottom: 0;
   position:fixed;
