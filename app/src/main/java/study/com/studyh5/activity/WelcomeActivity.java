@@ -19,7 +19,7 @@ public class WelcomeActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         webView.addJavascriptInterface(new JumpJs(), "jumpJs");
-        webView.loadUrl("file:///android_asset/html/welcome_launch.html");
+        webView.loadUrl("file:///android_asset/html/welcome/welcome_launch.html");
         RxPermissions rxPermissions = new RxPermissions(this);
         rxPermissions
                 .request(Manifest.permission.READ_PHONE_STATE)

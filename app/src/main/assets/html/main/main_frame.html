@@ -2,19 +2,19 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <script src="../jslibs/jquery.js">
+    <script src="../../jslibs/jquery.js">
     </script>
     <title>main_frame</title>
-    <link rel="stylesheet" type="text/css" href="../css/main_frame.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main/main_frame.css">
 </head>
 <body scroll="no">
 
 <div>
     <div id="header">
         <div id="header_search">
-            <img src="../imgs/sao_black.png" id="sao">
-            <img src="../imgs/home_search_bg.png" id="homeSearch">
-            <img src="../imgs/notice.png" id="notice">
+            <img src="../../imgs/sao_black.png" id="sao">
+            <img src="../../imgs/home_search_bg.png" id="homeSearch">
+            <img src="../../imgs/notice.png" id="notice">
         </div>
         <div id="header_tabs">
             <div id="noticeTab">
@@ -37,19 +37,19 @@
         <hr>
         <ul>
             <li id="footer_home">
-                <div><img src="../imgs/menu_icon_home_selected.png"/></div>
+                <div><img src="../../imgs/menu_icon_home_selected.png"/></div>
             </li>
             <li id="footer_search">
-                <div><img src="../imgs/menu_icon_search.png"/></div>
+                <div><img src="../../imgs/menu_icon_search.png"/></div>
             </li>
             <li id="footer_publish">
-                <div><img src="../imgs/menu_icon_publish.png"/></div>
+                <div><img src="../../imgs/menu_icon_publish.png"/></div>
             </li>
             <li id="footer_course">
-                <div><img src="../imgs/menu_icon_course.png"/></div>
+                <div><img src="../../imgs/menu_icon_course.png"/></div>
             </li>
             <li id="footer_user">
-                <div><img src="../imgs/menu_icon_user.png"/></div>
+                <div><img src="../../imgs/menu_icon_user.png"/></div>
             </li>
         </ul>
     </div>
@@ -74,7 +74,7 @@
         $("#recommendTab hr").hide();
         $("#latestTab span").css("color", "#333333");
         $("#latestTab hr").hide();
-        load_viewDiv("./main_home_notice.html");
+        load_viewDiv("./home/main_home_notice.html");
     });
 
     $("#recommendTab").click(function(){
@@ -84,7 +84,7 @@
         $("#recommendTab hr").show();
         $("#latestTab span").css("color", "#333333");
         $("#latestTab hr").hide();
-        load_viewDiv("./main_home_recommend.html");
+        load_viewDiv("./home/main_home_recommend.html");
     });
 
     $("#latestTab").click(function(){
@@ -94,7 +94,7 @@
         $("#recommendTab hr").hide();
         $("#latestTab span").css("color", "#E94653");
         $("#latestTab hr").show();
-        load_viewDiv("./main_home_latest.html");
+        load_viewDiv("./home/main_home_latest.html");
     });
 
     $("#footer_home").click(function(){
