@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <script src="../../jslibs/jquery.js">
     </script>
     <title>main_frame</title>
@@ -10,28 +10,6 @@
 <body scroll="no">
 
 <div>
-    <div id="header">
-        <div id="header_search">
-            <img src="../../imgs/sao_black.png" id="sao">
-            <img src="../../imgs/home_search_bg.png" id="homeSearch">
-            <img src="../../imgs/notice.png" id="notice">
-        </div>
-        <div id="header_tabs">
-            <div id="noticeTab">
-                <span>关注</span>
-                <hr>
-            </div>
-            <div id="recommendTab">
-                <span>推荐</span>
-                <hr>
-            </div>
-            <div id="latestTab">
-                <span>最新</span>
-                <hr>
-            </div>
-        </div>
-        <hr id="tabDivider">
-    </div>
 
     <div id="footer">
         <hr>
@@ -54,48 +32,19 @@
         </ul>
     </div>
 
+    <div id="frame_continer">
 
-    <div id="home_continer"></div>
+    </div>
 
 </div>
 
 <script>
 
     function load_viewDiv(path) {
-        $('#home_continer').load(path);
+        $('#frame_continer').load(path);
     }
 
-    load_viewDiv("./main_home_recommend.html");
-
-    $("#noticeTab").click(function(){
-        $("#noticeTab span").css("color", "#E94653");
-        $("#noticeTab hr").show();
-        $("#recommendTab span").css("color", "#333333");
-        $("#recommendTab hr").hide();
-        $("#latestTab span").css("color", "#333333");
-        $("#latestTab hr").hide();
-        load_viewDiv("./home/main_home_notice.html");
-    });
-
-    $("#recommendTab").click(function(){
-        $("#noticeTab span").css("color", "#333333");
-        $("#noticeTab hr").hide();
-        $("#recommendTab span").css("color", "#E94653");
-        $("#recommendTab hr").show();
-        $("#latestTab span").css("color", "#333333");
-        $("#latestTab hr").hide();
-        load_viewDiv("./home/main_home_recommend.html");
-    });
-
-    $("#latestTab").click(function(){
-        $("#noticeTab span").css("color", "#333333");
-        $("#noticeTab hr").hide();
-        $("#recommendTab span").css("color", "#333333");
-        $("#recommendTab hr").hide();
-        $("#latestTab span").css("color", "#E94653");
-        $("#latestTab hr").show();
-        load_viewDiv("./home/main_home_latest.html");
-    });
+    load_viewDiv("./main_home.html");
 
     $("#footer_home").click(function(){
         $("#footer_home img").attr("src","../../imgs/menu_icon_home_selected.png");

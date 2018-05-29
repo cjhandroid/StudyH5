@@ -1,0 +1,31 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+
+/* ----------------- recommend -----------------*/
+
+#recommend ul{
+  list-style-type:none;
+  text-align:center;
+}
+
+#recommend li{
+   text-align:center;
+   width:196px;
+   float:left;/*改动的地方*/
+}
+
+#recommend li div{
+    clear:both;
+    width: 120px;
+    font-size: 30px;
+    color:#333333;
+    margin: 20px auto;
+}
+
+#recommend img{
+    width: 120px;
+}
+
+/* ----------------- slider -----------------*/
