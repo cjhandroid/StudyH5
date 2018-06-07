@@ -3,8 +3,6 @@
 <head>
     <meta charset="utf-8"/>
     <title>文档标题</title>
-    <script src="../../jslibs/jquery.js">
-    </script>
     <script src="../../jslibs/svg.min.js">
     </script>
     <link rel="stylesheet" type="text/css" href="../../css/welcome/welcome_daily.css">
@@ -37,7 +35,7 @@
         }
         drawCircle('drawing', 'white');
 
-        $("#drawingP").click(function(){
+        document.getElementById('drawingP').onclick = (function(){
             clearTimeout(t);
             jumpJs.jump2MainAct();
         });

@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>文档标题</title>
-    <link rel="stylesheet" type="text/css" href="../../css/main/main_home_recommend.css">
-    <script src="../../jslibs/jquery.js">
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../css/main/main_home_recommend.css"/>
 </head>
 
 <body>
@@ -77,12 +75,30 @@
         </ul>
     </div>
     <div id="slider">
+        <ul id="slider_imgs">
+            <li id="slider_imgs0"><img src="../../imgs/home_big_slider0.png"></li>
+            <li><img src="../../imgs/home_big_slider1.png"></li>
+            <li><img src="../../imgs/home_big_slider2.png"></li>
+            <li><img src="../../imgs/home_big_slider3.png"></li>
+        </ul>
 
+        <ul id="slider_index">
+            <li id="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
 
 </div>
 
 <script>
+
+    function next(){
+        $("#slider_imgs").css("transition-duration","2s").css("transform", "translate3d(-940px,0px,0px)")
+    }
+
+    setTimeout("next()", 1500);
 
 </script>
 </body>
