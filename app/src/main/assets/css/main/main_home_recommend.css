@@ -44,8 +44,8 @@ ul{
 
 #slider_imgs{
     float:left;
-    margin:0 0 0 0px;
-    width:3760px;
+    margin:0 0 0 -940px;
+    width:5640px;
     height:268px;
 }
 
@@ -61,10 +61,10 @@ ul{
 }
 
 #slider_index{
-    float:left;
-    background-color: #00ff00;
+    clear:both;
+    position:absolute;
     text-align:center;
-    margin: -30px 0 0 425px;
+    margin: 230px 0 0 400px;
 }
 
 #slider_index li{

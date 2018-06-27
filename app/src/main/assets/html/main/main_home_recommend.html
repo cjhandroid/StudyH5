@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <title>文档标题</title>
+    <script src="../../jslibs/jquery.js">
+    </script>
     <link rel="stylesheet" type="text/css" href="../../css/main/main_home_recommend.css"/>
 </head>
 
@@ -61,7 +63,7 @@
                 </div>
             </li>
             <li>
-                <div>   
+                <div>
                     <img src="../../imgs/recommend_itme9.png">
                     <span>电子素材</span>
                 </div>
@@ -76,10 +78,12 @@
     </div>
     <div id="slider">
         <ul id="slider_imgs">
-            <li id="slider_imgs0"><img src="../../imgs/home_big_slider0.png"></li>
+            <li><img src="../../imgs/home_big_slider3.png"></li>
+            <li><img src="../../imgs/home_big_slider0.png"></li>
             <li><img src="../../imgs/home_big_slider1.png"></li>
             <li><img src="../../imgs/home_big_slider2.png"></li>
             <li><img src="../../imgs/home_big_slider3.png"></li>
+            <li><img src="../../imgs/home_big_slider0.png"></li>
         </ul>
 
         <ul id="slider_index">
@@ -94,11 +98,29 @@
 
 <script>
 
-    function next(){
-        $("#slider_imgs").css("transition-duration","2s").css("transform", "translate3d(-940px,0px,0px)")
-    }
+        var index = 0;
 
-    setTimeout("next()", 1500);
+        function next(i){
+            $("#slider_imgs").css("transition-duration","2s").css("transform", "translate3d( " + i*(-940) + "px,0px,0px)")
+            if(i == 5){
+                $("#slider_imgs").css("transition-duration","0s").css("transform", "translate3d( " + 0*(-940) + "px,0px,0px)")
+            }
+            lopperLogic();
+        }
+
+        function lopperLogic(){
+             index++;
+            if(index >= 6){
+                index = 1;
+            }
+            if(index == 1 || index == 5){
+                setTimeout("next("+index+")", 2000);
+            }else{
+                setTimeout("next("+index+")", 4000);
+            }
+        }
+
+        lopperLogic();
 
 </script>
 </body>
