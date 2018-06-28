@@ -101,11 +101,24 @@
         var index = 0;
 
         function next(i){
-            $("#slider_imgs").css("transition-duration","2s").css("transform", "translate3d( " + i*(-940) + "px,0px,0px)")
             if(i == 5){
                 $("#slider_imgs").css("transition-duration","0s").css("transform", "translate3d( " + 0*(-940) + "px,0px,0px)")
+            }else{
+                $("#slider_imgs").css("transition-duration","2s").css("transform", "translate3d( " + i*(-940) + "px,0px,0px)")
             }
+            setTimeout("updateBannerPoint("+ index +")", 1800);
             lopperLogic();
+        }
+
+        function updateBannerPoint(updateIndex){
+            $("#slider_index #on").removeAttr("id");
+            var onIndex = 0;
+            if(updateIndex == 4 || updateIndex == 5){
+                onIndex = 0;
+            }else{
+                onIndex = updateIndex;
+            }
+            $("#slider_index li:eq("+ onIndex +")").attr("id", "on");
         }
 
         function lopperLogic(){
