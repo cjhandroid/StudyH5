@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.webkit.JavascriptInterface;
 
+import com.jaeger.library.StatusBarUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import study.com.studyh5.base.BaseActivity;
@@ -41,4 +42,9 @@ public class WelcomeActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void initStatusBar() {
+        super.initStatusBar();
+        StatusBarUtil.setTransparent(this);
+    }
 }

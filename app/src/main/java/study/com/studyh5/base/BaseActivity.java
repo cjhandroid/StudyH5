@@ -29,6 +29,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mAct = this;
         setContentView(getLayoutId());
+        initStatusBar();
         webView = findViewById(R.id.webView);
 
         //声明WebSettings子类
@@ -78,6 +79,9 @@ public class BaseActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    protected void initStatusBar() {
     }
 
     private int getLayoutId() {

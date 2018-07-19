@@ -33,4 +33,5 @@ dependencies {
     implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1183_43604.jar')
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
     implementation "io.reactivex.rxjava2:rxjava:2.1.13"
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
 }
