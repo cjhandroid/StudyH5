@@ -37,25 +37,26 @@ ul{
 #slider{
     overflow:hidden;
     clear:both;
-    margin:40px 20px 60px 20px;
-    width:940px;
+    margin:40px 0px 60px 0px;
+    width:980px;
     height:268px;
 }
 
 #slider_imgs{
     float:left;
-    margin:0 0 0 -940px;
-    width:5640px;
+    margin:0 0 0 -980px;
+    width:5880px;
     height:268px;
 }
 
 #slider_imgs li{
-    width:940px;
+    width:980px;
     height:268px;
     float:left;
 }
 
 #slider_imgs img{
+    margin:0px 20px 0px 20px;
     width:940px;
     height:268px;
 }

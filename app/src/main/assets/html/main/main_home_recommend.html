@@ -78,12 +78,12 @@
     </div>
     <div id="slider">
         <ul id="slider_imgs">
-            <li><img src="../../imgs/home_big_slider3.png"></li>
-            <li><img src="../../imgs/home_big_slider0.png"></li>
-            <li><img src="../../imgs/home_big_slider1.png"></li>
-            <li><img src="../../imgs/home_big_slider2.png"></li>
-            <li><img src="../../imgs/home_big_slider3.png"></li>
-            <li><img src="../../imgs/home_big_slider0.png"></li>
+            <li><img src="../../imgs/home_big_slider3.png" id="slider_imgs_0"></li>
+            <li><img src="../../imgs/home_big_slider0.png" id="slider_imgs_1"></li>
+            <li><img src="../../imgs/home_big_slider1.png" id="slider_imgs_2"></li>
+            <li><img src="../../imgs/home_big_slider2.png" id="slider_imgs_3"></li>
+            <li><img src="../../imgs/home_big_slider3.png" id="slider_imgs_4"></li>
+            <li><img src="../../imgs/home_big_slider0.png" id="slider_imgs_5"></li>
         </ul>
 
         <ul id="slider_index">
@@ -98,15 +98,19 @@
 
 <script>
 
+        var t;
+
         var index = 0;
+
+        var lastTouchX = 0;
 
         function next(i){
             if(i == 5){
-                $("#slider_imgs").css("transition-duration","0s").css("transform", "translate3d( " + 0*(-940) + "px,0px,0px)")
+                $("#slider_imgs").css("transition-duration","0s").css("transform", "translate3d( " + 0*(-980) + "px,0px,0px)");
             }else{
-                $("#slider_imgs").css("transition-duration","2s").css("transform", "translate3d( " + i*(-940) + "px,0px,0px)")
+                $("#slider_imgs").css("transition-duration","2s").css("transform", "translate3d( " + i*(-980) + "px,0px,0px)");
             }
-            setTimeout("updateBannerPoint("+ i +")", 1800);
+            t = setTimeout("updateBannerPoint("+ i +")", 1800);
             lopperLogic();
         }
 
@@ -127,13 +131,54 @@
                 index = 1;
             }
             if(index == 1 || index == 5){
-                setTimeout("next("+index+")", 2000);
+                t = setTimeout("next("+index+")", 2000);
             }else{
-                setTimeout("next("+index+")", 4000);
+                t = setTimeout("next("+index+")", 4000);
             }
         }
 
         lopperLogic();
+
+        function registerSliderTouchListeners(){
+            for(var j=0; j<6; j++){
+                var id = "#slider_imgs_" + j;
+                $(id).on('touchstart',touch);
+                $(id).on('touchmove',touch);
+                $(id).on('touchend',touch);
+                $(id).on("click",touch);
+            }
+        }
+
+        function touch(event){
+            switch(event.type){
+                case "click":
+                    window.console.log("click" + index);
+                break;
+
+                case "touchstart":
+                    clearTimeout(t);
+                    lastTouchX = event.targetTouches[0].clientX;
+                break;
+
+                case "touchmove":
+                    window.console.log("touchmove" + index);
+                    var moveDiff = event.targetTouches[0].clientX - lastTouchX;
+                    lastTouchX = event.targetTouches[0].clientX;
+                    $("#slider_imgs").css("transition-duration","0s").css("transform", "translate3d( " + ($("#slider_imgs").position().left + moveDiff) + "px,0px,0px)");
+                break;
+
+                case "touchend":
+                    window.console.log("touchend" + index);
+                    index--;
+                    clearTimeout(t);
+                    window.console.log("touchend" + index);
+                    lopperLogic();
+                    <!--window.console.log("touchend: " + event.changedTouches[0].clientX);-->
+                break;
+            }
+        }
+
+        registerSliderTouchListeners();
 
 </script>
 </body>

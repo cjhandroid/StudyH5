@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.tencent.smtt.export.external.interfaces.JsResult;
 import com.tencent.smtt.sdk.WebChromeClient;
@@ -70,12 +71,8 @@ public class BaseActivity extends AppCompatActivity {
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public boolean onJsAlert(WebView webView, String s, String s1, JsResult jsResult) {
-                new AlertDialog.Builder(mAct).setTitle("JsAlert").setMessage(s).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                }).setCancelable(false).show();
+                Toast.makeText(getApplicationContext(), s1, Toast.LENGTH_SHORT).show();
+                jsResult.cancel();
                 return true;
             }
         });
