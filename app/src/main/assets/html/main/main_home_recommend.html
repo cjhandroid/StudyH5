@@ -98,6 +98,8 @@
 
 <script>
 
+        var frictioFactor = 0.3;
+
         var t;
 
         var index = 0;
@@ -137,13 +139,13 @@
             }
         }
 
-        function resetParams(){
-            index = 0;
+        function resetParams(resetIndex){
+            index = resetIndex;
             lastTouchX = 0;
-             clearTimeout(t);
+            clearTimeout(t);
         }
 
-        resetParams();
+        resetParams(0);
         lopperLogic();
 
         function registerSliderTouchListeners(){
@@ -168,20 +170,36 @@
                 break;
 
                 case "touchmove":
-                    window.console.log("touchmove" + index);
+                    var sliderImagesPosition = $("#slider_imgs").position().left;
                     var moveDiff = event.targetTouches[0].clientX - lastTouchX;
                     lastTouchX = event.targetTouches[0].clientX;
+                    if(sliderImagesPosition >=0 || sliderImagesPosition <=-2940){
+                        moveDiff = moveDiff * frictioFactor;
+                    }
+                    computeIndex(sliderImagesPosition);
                     $("#slider_imgs").css("transition-duration","0s").css("transform", "translate3d( " + ($("#slider_imgs").position().left + moveDiff) + "px,0px,0px)");
                 break;
 
                 case "touchend":
-                    window.console.log("touchend" + index);
-                    index--;
+                    $("#slider_imgs").css("transition-duration","1s").css("transform", "translate3d( " + index*(-980) + "px,0px,0px)");
+                    setTimeout("updateBannerPoint("+ index +")", 1000);
                     clearTimeout(t);
-                    window.console.log("touchend" + index);
                     lopperLogic();
-                    <!--window.console.log("touchend: " + event.changedTouches[0].clientX);-->
                 break;
+            }
+        }
+
+        function computeIndex(sliderImagesPosition){
+            if(sliderImagesPosition >=0 || sliderImagesPosition >= (-490 - 980*0)){
+                index = 0;
+            }else if(sliderImagesPosition < -490 && sliderImagesPosition >= (-490 - 980*1)){
+                index = 1;
+            }else if(sliderImagesPosition < (-490 - 980*1) && sliderImagesPosition >= (-490 - 980*2)){
+                index = 2;
+            }else if(sliderImagesPosition < (-490 - 980*2) && sliderImagesPosition >= (-490 - 980*3)){
+                index = 3;
+            }else if(sliderImagesPosition < (-490 - 980*3) && sliderImagesPosition >= (-490 - 980*4)){
+                index = 4;
             }
         }
 
