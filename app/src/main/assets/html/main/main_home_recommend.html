@@ -126,7 +126,7 @@
         }
 
         function lopperLogic(){
-             index++;
+            index++;
             if(index >= 6){
                 index = 1;
             }
@@ -137,6 +137,13 @@
             }
         }
 
+        function resetParams(){
+            index = 0;
+            lastTouchX = 0;
+             clearTimeout(t);
+        }
+
+        resetParams();
         lopperLogic();
 
         function registerSliderTouchListeners(){
