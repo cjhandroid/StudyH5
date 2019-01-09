@@ -37,14 +37,14 @@ ul{
 #slider{
     overflow:hidden;
     clear:both;
-    margin:40px 0px 60px 0px;
+    margin:0px 0px 40px 0px;
     width:980px;
     height:268px;
 }
 
 #slider_imgs{
     float:left;
-    margin:0 0 0 -980px;
+    margin:20px 0 0 -980px;
     width:5880px;
     height:268px;
 }
@@ -78,4 +78,12 @@ ul{
 
 #slider_index #on{
     background-color: #E94653;
+}
+/* ----------------- hr_below_slider -----------------*/
+#hr_below_slider{
+    border:0px;
+    background-color:#dcdcdc;
+    height:1px;
+    width: 940px;
+    margin: 0px 20px 0 20px;
 }

@@ -5,11 +5,14 @@
     <title>文档标题</title>
     <script src="../../jslibs/jquery.js">
     </script>
+    <script src="../../jslibs/common.js">
+    </script>
     <link rel="stylesheet" type="text/css" href="../../css/main/main_home_recommend.css"/>
 </head>
 
 <body>
 <div>
+    //--------------------- recommend icon ---------------------
     <div id="recommend">
         <ul>
             <li>
@@ -43,6 +46,7 @@
                 </div>
             </li>
         </ul>
+
         <ul>
             <li>
                 <div>
@@ -76,6 +80,8 @@
             </li>
         </ul>
     </div>
+
+    //--------------------- slider ---------------------
     <div id="slider">
         <ul id="slider_imgs">
             <li><img src="../../imgs/home_big_slider3.png" id="slider_imgs_0"></li>
@@ -94,10 +100,19 @@
         </ul>
     </div>
 
+    <hr id="hr_below_slider">
+
+    <div id="data_list">
+
+    </div>
+
+    //--------------------- recyclerView ---------------------
+
 </div>
 
 <script>
 
+//--------------------- slider logic ---------------------
         var frictioFactor = 0.3;
 
         var t;
@@ -203,7 +218,26 @@
             }
         }
 
+//--------------------- recyclerView logic ---------------------
+
+        // ----------------- read recommend today data ------------------
+        function getRecommendTodayData(){
+            fetchData.fetchRecommendToday();
+        }
+
+        function parseRecommendTodayData(json){
+
+            console.log(json.length);
+        }
+
+        //-------------- horizontal course logic ---------------
+        function addCoursesDiv(){
+
+        }
+
         registerSliderTouchListeners();
+        getRecommendTodayData()
+
 
 </script>
 </body>

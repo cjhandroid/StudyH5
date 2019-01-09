@@ -1,12 +1,12 @@
 package study.com.studyh5.activity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.webkit.JavascriptInterface;
 
-import com.jaeger.library.StatusBarUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import study.com.studyh5.base.BaseActivity;
@@ -16,6 +16,7 @@ import study.com.studyh5.base.BaseActivity;
  */
 public class WelcomeActivity extends BaseActivity {
 
+    @SuppressLint("CheckResult")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,6 @@ public class WelcomeActivity extends BaseActivity {
     }
 
     public class JumpJs extends Object {
-
         @JavascriptInterface
         public void jump2MainAct() {
             startActivity(new Intent(mAct, MainActivity.class));
@@ -45,6 +45,5 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     protected void initStatusBar() {
         super.initStatusBar();
-        StatusBarUtil.setTransparent(this);
     }
 }

@@ -16,6 +16,13 @@ import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
 
+import io.reactivex.Flowable;
+import io.reactivex.FlowableTransformer;
+import io.reactivex.Observable;
+import io.reactivex.ObservableTransformer;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import study.com.studyh5.R;
 
 public class BaseActivity extends AppCompatActivity {
@@ -84,4 +91,15 @@ public class BaseActivity extends AppCompatActivity {
     private int getLayoutId() {
         return R.layout.activity_main;
     }
+
+    public static <T> FlowableTransformer<T, T> rxSchedulerHelper() {    //compose简化线程
+        return observable -> observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    public static <T> ObservableTransformer<T, T> rxSchedulerHelper2() {    //compose简化线程
+        return observable -> observable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
 }
